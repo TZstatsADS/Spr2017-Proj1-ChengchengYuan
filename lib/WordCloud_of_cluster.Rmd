@@ -40,7 +40,7 @@ print(R.version)
 
 # Step 1 - Read in the speeches and the clustering results of top modeling
 
-Based on the clustering results of topic modeling, we classify the speeches of presidents into five cluster in preparation of the following analysis.
+Based on the clustering results of topic modeling, we classify the speeches of presidents into five clusters in preparation of the following analysis.
 
 ```{r,warning=FALSE}
 currentwd <- getwd()
@@ -118,7 +118,7 @@ dtm_mat_long <- dtm_mat[index,]
 
 #Step 4 - Inspect a comparison wordcloud
 
-Using the tools of wordcloud package, we can calculate a comparison wordcloud to show the difference of important words across the clusters. In this notebook, we give two results including maximum words of 200 and 2000 respectively.
+Using the tools of wordcloud package, we can calculate a comparison wordcloud to show the difference of important words across the clusters. In this notebook, we give two results with maximum words of 200 and 2000 respectively.
 
 ```{r,warning=FALSE,results='hide', echo=TRUE, warning=FALSE, results='hide'}
 pdf(paste(currentwd,"/output/Comparison_cloud_200.pdf",sep=""),height=8,width=8)
@@ -171,11 +171,11 @@ commonality.cloud(dtm_mat_long,
                   random.order=FALSE)
 
 ```
-We can see from the result we can see that the top common words presidents in every cluster seem to emphasis are 'people', 'government', 'nations' and so on.
+We can see from the result that the top common words presidents in every cluster seem to emphasis are 'people', 'government', 'nations' and so on.
 
 #Step 6 - Calculate the word frequency within each cluster
 
-We set four frequency levels for this calculation which is 0.25, 0.5, 0.75 and 1. Since a large amount of words are of frequency between 0 and 0.25, we draw a random samples from the class for plotting the word frequency graph.
+We set four frequency levels for this calculation which are 0.25, 0.5, 0.75 and 1. Since a large amount of words are of frequency between 0 and 0.25, we draw a random samples from this class for plotting the word frequency graph.
 
 ```{r, echo=TRUE, warning=FALSE}
 dtm_mat_long_norm <- apply(dtm_mat_long,2,function(col) col/max(col) )
@@ -224,6 +224,7 @@ ggplot(word_frequency2) +
 
 ```
 
+From the frequency plot, we can see that Cluster4 which is consisted of the speech of Donald Trump mainly emphasise America, American and Country while the speeches of presidents in other four clusters are about government, world and people.
 
 
 
