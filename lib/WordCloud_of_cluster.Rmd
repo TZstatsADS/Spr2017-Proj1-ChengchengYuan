@@ -2,8 +2,9 @@
 title: "R Notebook Data Story on US Presidents' Inaugural Speeches"
 author: "Chengcheng Yuan"
 output:
-  html_document: default
+  pdf_document: default
   html_notebook: default
+  html_document: default
 ---
 
 
@@ -171,6 +172,7 @@ commonality.cloud(dtm_mat_long,
                   random.order=FALSE)
 
 ```
+
 We can see from the result that the top common words presidents in every cluster seem to emphasis are 'people', 'government', 'nations' and so on.
 
 #Step 6 - Calculate the word frequency within each cluster
